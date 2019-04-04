@@ -41,7 +41,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Luckykenlin\\Aldelo\\Providers\\AldeloServiceProvider"
+        "Luckykenlin\\Aldelo\\Providers\\ServiceProvider"
       ],
       "aliases": {
       }
