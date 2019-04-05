@@ -23,7 +23,7 @@ class EmployeeTest extends TestCase
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function testFetchEmployeesTest()
+    public function testFetchTest()
     {
         $this->setUpEnv();
         $query = [];
@@ -37,7 +37,7 @@ class EmployeeTest extends TestCase
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function testCreateEmployeesTest()
+    public function testCreateTest()
     {
         $this->setUpEnv();
         $data = [
@@ -50,12 +50,15 @@ class EmployeeTest extends TestCase
     }
 
     /**
+     * Retrieve employee.
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function testRetrieveEmployeesTest()
+    public function testRetrieveTest()
     {
         $this->setUpEnv();
-        $employee = Employee::retrieve(1000000000000000004);
+        $employeeId = 1000000000000000001;
+        $employee = Employee::retrieve($employeeId);
         $this->assertNotNull($employee);
     }
 
@@ -65,10 +68,11 @@ class EmployeeTest extends TestCase
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function testUpdateEmployeesTest()
+    public function testUpdateTest()
     {
         $this->setUpEnv();
-        $employee = Employee::retrieve(1000000000000000004);
+        $employeeId = 1000000000000000001;
+        $employee = Employee::retrieve($employeeId);
         $data = [
             "EmployeeID" => $employee['EmployeeID'],
             "FirstName" => "EzOrderNow11",

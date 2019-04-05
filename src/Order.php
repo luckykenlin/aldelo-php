@@ -2,16 +2,14 @@
 
 namespace Luckykenlin\Aldelo;
 
-use phpseclib\Math\BigInteger;
-
 /**
- * Class Employee
+ * Class Order
  * @package Guesl\Clover\Models\Employee
  */
-class Employee extends Aldelo
+class Order extends Aldelo
 {
     /**
-     * Create an employee.
+     * Create an order.
      *
      * @param array $data
      * @return mixed
@@ -22,15 +20,15 @@ class Employee extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $employee = $httpClient->post("$version/employee", [
+        $order = $httpClient->post("$version/order", [
             'json' => $data,
         ]);
 
-        return $employee;
+        return $order;
     }
 
     /**
-     * Update an employee info.
+     * Update an order info.
      *
      * @param array $data
      * @return mixed
@@ -41,15 +39,15 @@ class Employee extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $employee = $httpClient->put("$version/employee", [
+        $order = $httpClient->put("$version/order", [
             'json' => $data,
         ]);
 
-        return $employee;
+        return $order;
     }
 
     /**
-     * Retrieve an employee.
+     * Retrieve an order.
      *
      * @param $id
      * @return mixed
@@ -60,27 +58,49 @@ class Employee extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $employee = $httpClient->get("$version/employee/{$id}");
+        $order = $httpClient->get("$version/order/{$id}");
 
-        return $employee;
+        return $order;
     }
 
     /**
-     * Fetch all employees.
+     * Fetch all orders.
      *
      * @param array $query
+     * @param $requiredDate
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public static function fetch(array $query)
+    public static function fetch(array $query, $requiredDate)
     {
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $employees = $httpClient->get("$version/employeeList", [
+        $orders = $httpClient->get("$version/orderList/{$requiredDate}", [
             'query' => $query
         ]);
 
-        return $employees;
+        return $orders;
     }
+
+    /**
+     * Delete order.
+     *
+     * @param int $id
+     * @param string $reason
+     * @return mixed
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public static function void(int $id, string $reason = '')
+    {
+        $httpClient = self::getHttpClient();
+        $version = self::VERSION;
+
+        $orders = $httpClient->delete("$version/order/{$id}", [
+            'reason' => $reason
+        ]);
+
+        return $orders;
+    }
+
 }
