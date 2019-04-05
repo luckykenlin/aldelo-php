@@ -51,6 +51,27 @@ class Aldelo
     private static $appVersion;
 
     /**
+     * @var
+     */
+    private static $storeSubId;
+
+    /**
+     * @return mixed
+     */
+    public static function getStoreSubId()
+    {
+        return self::$storeSubId;
+    }
+
+    /**
+     * @param mixed $storeSubId
+     */
+    public static function setStoreSubId($storeSubId): void
+    {
+        self::$storeSubId = $storeSubId;
+    }
+
+    /**
      * @return mixed
      */
     public static function getIsvId()
@@ -119,13 +140,15 @@ class Aldelo
      */
     protected static function getHttpClient()
     {
-        $baseUrl = static::getBaseUrl();
-
-        $client = HttpClient::getInstance($baseUrl, [
+        $client = HttpClient::getInstance(static::getBaseUrl(), [
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
-                'Authorization' => "Bearer $accessToken"
+                'ISV-ID' => static::getIsvId(),
+                'ISV-KEY' => static::getIsvKey(),
+                'App-Key' => static::getAppKey(),
+                'App-Version' => static::getAppVersion(),
+                'Store-Sub-ID' => static::getStoreSubId(),
             ],
         ]);
 
