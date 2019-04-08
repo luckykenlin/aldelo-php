@@ -28,7 +28,7 @@ class OrderTest extends TestCase
         $this->setUpEnv();
         $query = [];
         $requiredDate = now()->format('Ymd');
-        $orders = Order::fetch($query, $requiredDate);
+        $orders = Order::fetch($requiredDate, $query);
         $this->assertNotNull($orders);
     }
 

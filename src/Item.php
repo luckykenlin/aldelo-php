@@ -33,7 +33,7 @@ class Item extends Aldelo
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public static function fetch(int $groupId, array $query)
+    public static function fetch(int $groupId, array $query = [])
     {
         $httpClient = self::getHttpClient();
         $version = self::VERSION;

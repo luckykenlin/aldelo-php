@@ -71,7 +71,7 @@ class Order extends Aldelo
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public static function fetch(array $query, $requiredDate)
+    public static function fetch($requiredDate, array $query = [])
     {
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
