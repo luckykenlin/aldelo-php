@@ -2,13 +2,13 @@
 
 namespace Luckykenlin\Aldelo\Providers;
 
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
+use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 /**
  * Class ServiceProvider
  * @package Luckykenlin\Aldelo\Providers
  */
-class ServiceProvider extends RouteServiceProvider
+class ServiceProvider extends IlluminateServiceProvider
 {
     /**
      * Indicates if loading of the provider is deferred.
