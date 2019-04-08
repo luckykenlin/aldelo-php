@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 
 /**
  * Class HttpClient
- * @package Guesl\Loyalty
+ * @package Luckykenlin\Aldelo\
  */
 class HttpClient
 {

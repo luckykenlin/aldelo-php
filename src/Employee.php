@@ -2,11 +2,9 @@
 
 namespace Luckykenlin\Aldelo;
 
-use phpseclib\Math\BigInteger;
-
 /**
  * Class Employee
- * @package Guesl\Clover\Models\Employee
+ * @package Luckykenlin\Aldelo\Employee
  */
 class Employee extends Aldelo
 {

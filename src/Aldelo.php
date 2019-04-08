@@ -2,11 +2,9 @@
 
 namespace Luckykenlin\Aldelo;
 
-use Luckykenlin\Aldelo\HttpClient;
-
 /**
  * Class Aldelo
- * @package Guesl\Clover\Models
+ * @package Luckykenlin\Aldelo
  */
 class Aldelo
 {

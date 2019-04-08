@@ -4,7 +4,7 @@ namespace Luckykenlin\Aldelo;
 
 /**
  * Class Order
- * @package Guesl\Clover\Models\Employee
+ * @package Luckykenlin\Aldelo\Order
  */
 class Order extends Aldelo
 {
