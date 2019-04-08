@@ -3,10 +3,10 @@
 namespace Tests\Unit;
 
 use Luckykenlin\Aldelo\Aldelo;
-use Luckykenlin\Aldelo\Item;
+use Luckykenlin\Aldelo\Store;
 use PHPUnit\Framework\TestCase;
 
-class ItemTest extends TestCase
+class StoreTest extends TestCase
 {
     public function setUpEnv()
     {
@@ -18,30 +18,14 @@ class ItemTest extends TestCase
     }
 
     /**
-     * Fetch items.
-     *
-     * @return void
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     */
-    public function testFetchTest()
-    {
-        $this->setUpEnv();
-        $groupId = 1000000000000000003;
-        $query = [];
-        $items = Item::fetch($groupId, $query);
-        $this->assertNotNull($items);
-    }
-
-    /**
-     * Retrieve item.
+     * Retrieve store.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testRetrieveTest()
     {
         $this->setUpEnv();
-        $itemId = 1000000000000000008;
-        $item = Item::retrieve($itemId);
-        $this->assertNotNull($item);
+        $store = Store::retrieve();
+        $this->assertNotNull($store);
     }
 }

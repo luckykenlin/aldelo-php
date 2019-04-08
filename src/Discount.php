@@ -3,13 +3,13 @@
 namespace Luckykenlin\Aldelo;
 
 /**
- * Class Item
- * @package Luckykenlin\Aldelo\Item
+ * Class Discount
+ * @package Luckykenlin\Aldelo\Discount
  */
-class Item extends Aldelo
+class Discount extends Aldelo
 {
     /**
-     * Retrieve an Item.
+     * Retrieve an discount.
      *
      * @param $id
      * @return mixed
@@ -20,28 +20,24 @@ class Item extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $item = $httpClient->get("$version/item/{$id}");
+        $discount = $httpClient->get("$version/discount/{$id}");
 
-        return $item;
+        return $discount;
     }
 
     /**
-     * Fetch all items.
+     * Fetch all discounts.
      *
-     * @param int $groupId
-     * @param array $query ex:['parentItemID' = 10000000000001]
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public static function fetch(int $groupId, array $query)
+    public static function fetch()
     {
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $items = $httpClient->get("$version/itemList/$groupId", [
-            'query' => $query
-        ]);
+        $discounts = $httpClient->get("$version/discountList");
 
-        return $items;
+        return $discounts;
     }
 }

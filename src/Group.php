@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Group extends Aldelo
 {
     /**
-     * Retrieve an Item.
+     * Retrieve an group.
      *
      * @param $id
      * @return mixed
@@ -20,28 +20,24 @@ class Group extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $item = $httpClient->get("$version/item/{$id}");
+        $group = $httpClient->get("$version/group/{$id}");
 
-        return $item;
+        return $group;
     }
 
     /**
-     * Fetch all employees.
+     * Fetch all groups.
      *
-     * @param int $groupId
-     * @param array $query ex:['parentItemID' = 10000000000001]
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public static function fetch(int $groupId, array $query)
+    public static function fetch()
     {
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $items = $httpClient->get("$version/itemList/$groupId", [
-            'query' => $query
-        ]);
+        $groups = $httpClient->get("$version/groupList");
 
-        return $items;
+        return $groups;
     }
 }

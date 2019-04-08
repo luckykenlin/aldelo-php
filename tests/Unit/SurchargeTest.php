@@ -3,10 +3,10 @@
 namespace Tests\Unit;
 
 use Luckykenlin\Aldelo\Aldelo;
-use Luckykenlin\Aldelo\Item;
+use Luckykenlin\Aldelo\Surcharge;
 use PHPUnit\Framework\TestCase;
 
-class ItemTest extends TestCase
+class SurchargeTest extends TestCase
 {
     public function setUpEnv()
     {
@@ -18,7 +18,7 @@ class ItemTest extends TestCase
     }
 
     /**
-     * Fetch items.
+     * Fetch surcharges.
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -26,22 +26,20 @@ class ItemTest extends TestCase
     public function testFetchTest()
     {
         $this->setUpEnv();
-        $groupId = 1000000000000000003;
-        $query = [];
-        $items = Item::fetch($groupId, $query);
-        $this->assertNotNull($items);
+        $surcharges = Surcharge::fetch();
+        $this->assertNotNull($surcharges);
     }
 
     /**
-     * Retrieve item.
+     * Retrieve surcharge.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testRetrieveTest()
     {
         $this->setUpEnv();
-        $itemId = 1000000000000000008;
-        $item = Item::retrieve($itemId);
-        $this->assertNotNull($item);
+        $surchargeId = 1000000000000000001;
+        $surcharge = Surcharge::retrieve($surchargeId);
+        $this->assertNotNull($surcharge);
     }
 }
