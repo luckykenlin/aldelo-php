@@ -15,6 +15,10 @@ class Order extends Aldelo
     const DELIVERY = 5;
     const RETAIL = 6;
 
+    const STATUS_NEW = 1;
+    const STATUS_SETTLE = 2;
+    const STATUS_VOID = 3;
+
     /**
      * Create an order.
      *
