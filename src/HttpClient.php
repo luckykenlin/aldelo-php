@@ -105,10 +105,7 @@ class HttpClient
         }
         $requestOptions = array_merge($requestOptions, $options);
         $response = $this->getHttpClient()->request($method, $url, $requestOptions);
-        $result = json_decode($response->getBody(), true);
-        if (array_key_exists('err_code', $result) && (int)$result['err_code'] !== 0) {
-            throw new AldeloException($result['err_msg'], 422);
-        }
+        $result = $this->handleResponse($response);
         return $result;
     }
 
@@ -182,5 +179,25 @@ class HttpClient
         } else {
             return new HttpClient($baseUrl, $options);
         }
+    }
+
+    /**
+     * Get http client instance.
+     *
+     * @param $response
+     * @return HttpClient
+     * @throws AldeloException
+     */
+    public function handleResponse($response)
+    {
+        $result = json_decode($response->getBody(), true);
+        if (array_key_exists('err_code', $result)) {
+            if ((int)$result['err_code'] === AldeloException::NOT_FOUND) {
+                return $result;
+            } else if ((int)$result['err_code'] !== AldeloException::SUCCESSFUL) {
+                throw new AldeloException($result['err_msg'], 422);
+            }
+        }
+        return $result;
     }
 }
