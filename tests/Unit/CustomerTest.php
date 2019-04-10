@@ -18,7 +18,7 @@ class CustomerTest extends TestCase
     }
 
     /**
-     * Fetch employees.
+     * Fetch customers.
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -33,7 +33,7 @@ class CustomerTest extends TestCase
     }
 
     /**
-     * Create employee.
+     * Create customer.
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -62,7 +62,7 @@ class CustomerTest extends TestCase
     }
 
     /**
-     * Retrieve employee.
+     * Retrieve customer.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
@@ -76,7 +76,7 @@ class CustomerTest extends TestCase
     }
 
     /**
-     * Update employee.
+     * Update customer.
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
@@ -90,7 +90,7 @@ class CustomerTest extends TestCase
         $data = [
             "CustomerID" => $customerId,
             "CustomerName" => "xuQQ111",
-            "Telephone" => "18601399453",
+            "Telephone" => "18601399451",
             "Email" => "xuqq@aldelo.com",
             "Address" => null,
             "CrossStreet" => null,
