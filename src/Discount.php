@@ -14,6 +14,7 @@ class Discount extends Aldelo
      * @param $id
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function retrieve(int $id)
     {
@@ -29,6 +30,7 @@ class Discount extends Aldelo
      * Fetch all discounts.
      *
      * @return mixed
+     * @throws Exceptions\AldeloException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public static function fetch()

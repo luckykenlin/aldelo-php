@@ -22,6 +22,7 @@ class OrderTest extends TestCase
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testFetchTest()
     {
@@ -37,6 +38,7 @@ class OrderTest extends TestCase
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testCreateTest()
     {
@@ -79,6 +81,7 @@ class OrderTest extends TestCase
      * Retrieve Order
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testRetrieveTest()
     {
@@ -101,6 +104,7 @@ class OrderTest extends TestCase
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testUpdateTest()
     {
@@ -155,6 +159,7 @@ class OrderTest extends TestCase
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testVoidTest()
     {

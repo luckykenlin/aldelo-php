@@ -3,6 +3,7 @@
 namespace Luckykenlin\Aldelo;
 
 use GuzzleHttp\Client;
+use Luckykenlin\Aldelo\Exceptions\AldeloException;
 
 /**
  * Class HttpClient
@@ -94,6 +95,7 @@ class HttpClient
      * @param array $options
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws AldeloException
      */
     public function execute(string $method, string $url, array $options = [])
     {
@@ -104,6 +106,9 @@ class HttpClient
         $requestOptions = array_merge($requestOptions, $options);
         $response = $this->getHttpClient()->request($method, $url, $requestOptions);
         $result = json_decode($response->getBody(), true);
+        if (array_key_exists('err_code', $result) && (int)$result['err_code'] !== 0) {
+            throw new AldeloException($result['err_msg'], 422);
+        }
         return $result;
     }
 
@@ -113,6 +118,7 @@ class HttpClient
      * @param string $url
      * @param array $options
      * @return mixed
+     * @throws AldeloException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function get(string $url, array $options = [])
@@ -127,6 +133,7 @@ class HttpClient
      * @param array $options
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws AldeloException
      */
     public function post(string $url = null, array $options = [])
     {
@@ -140,6 +147,7 @@ class HttpClient
      * @param array $options
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws AldeloException
      */
     public function put(string $url = null, array $options = [])
     {
@@ -153,6 +161,7 @@ class HttpClient
      * @param array $options
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws AldeloException
      */
     public function delete(string $url = null, array $options = [])
     {

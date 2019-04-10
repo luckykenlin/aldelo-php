@@ -3,10 +3,10 @@
 namespace Tests\Unit;
 
 use Luckykenlin\Aldelo\Aldelo;
-use Luckykenlin\Aldelo\Employee;
+use Luckykenlin\Aldelo\Customer;
 use PHPUnit\Framework\TestCase;
 
-class EmployeeTest extends TestCase
+class CustomerTest extends TestCase
 {
     public function setUpEnv()
     {
@@ -28,8 +28,8 @@ class EmployeeTest extends TestCase
     {
         $this->setUpEnv();
         $query = [];
-        $employees = Employee::fetch($query);
-        $this->assertNotNull($employees);
+        $customers = Customer::fetch($query);
+        $this->assertNotNull($customers);
     }
 
     /**
@@ -43,12 +43,22 @@ class EmployeeTest extends TestCase
     {
         $this->setUpEnv();
         $data = [
-            "FirstName" => "EzOrderNow",
-            "LastName" => "M",
-            "JobTitle" => "Online order"
+            "CustomerName" => "xuQQ",
+            "Telephone" => "18601399451",
+            "Email" => "xuqq@aldelo.com",
+            "Address" => null,
+            "CrossStreet" => null,
+            "City" => null,
+            "State" => null,
+            "PostalCode" => null,
+            "AnniversaryMonth" => null,
+            "BirthMonth" => null,
+            "VIPType" => null,
+            "Barcode" => null,
+            "Notes" => null
         ];
-        $employee = Employee::create($data);
-        $this->assertNotNull($employee);
+        $customer = Customer::create($data);
+        $this->assertNotNull($customer);
     }
 
     /**
@@ -60,9 +70,9 @@ class EmployeeTest extends TestCase
     public function testRetrieveTest()
     {
         $this->setUpEnv();
-        $employeeId = 1000000000000000001;
-        $employee = Employee::retrieve($employeeId);
-        $this->assertNotNull($employee);
+        $customerId = 1000000000000000001;
+        $customer = Customer::retrieve($customerId);
+        $this->assertNotNull($customer);
     }
 
     /**
@@ -75,16 +85,26 @@ class EmployeeTest extends TestCase
     public function testUpdateTest()
     {
         $this->setUpEnv();
-        $employeeId = 1000000000000000001;
-        $employee = Employee::retrieve($employeeId);
+        $customerId = 1000000000000000001;
+        $customer = Customer::retrieve($customerId);
         $data = [
-            "EmployeeID" => $employee['EmployeeID'],
-            "FirstName" => "EzOrderNow11",
-            "LastName" => "D",
-            "JobTitle" => "Online order",
-            "DataSignature" => $employee['DataSignature']
+            "CustomerID" => $customerId,
+            "CustomerName" => "xuQQ111",
+            "Telephone" => "18601399453",
+            "Email" => "xuqq@aldelo.com",
+            "Address" => null,
+            "CrossStreet" => null,
+            "City" => null,
+            "State" => null,
+            "PostalCode" => null,
+            "AnniversaryMonth" => null,
+            "BirthMonth" => null,
+            "VIPType" => null,
+            "Barcode" => null,
+            "Notes" => null,
+            "DataSignature" => $customer['DataSignature']
         ];
-        $result = Employee::update($data);
+        $result = Customer::update($data);
         $this->assertEquals(0, $result['err_code']);
     }
 

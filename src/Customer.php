@@ -3,20 +3,13 @@
 namespace Luckykenlin\Aldelo;
 
 /**
- * Class Order
- * @package Luckykenlin\Aldelo\Order
+ * Class Customer
+ * @package Luckykenlin\Aldelo\Customer
  */
-class Order extends Aldelo
+class Customer extends Aldelo
 {
-    const DINE_IN = 1;
-    const BAR = 2;
-    const TAKE_OUT = 3;
-    const DRIVE_THRU = 4;
-    const DELIVERY = 5;
-    const RETAIL = 6;
-
     /**
-     * Create an order.
+     * Create an customer.
      *
      * @param array $data
      * @return mixed
@@ -28,15 +21,15 @@ class Order extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $order = $httpClient->post("$version/order", [
+        $customer = $httpClient->post("$version/customer", [
             'json' => $data,
         ]);
 
-        return $order;
+        return $customer;
     }
 
     /**
-     * Update an order info.
+     * Update an customer info.
      *
      * @param array $data
      * @return mixed
@@ -48,15 +41,15 @@ class Order extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $order = $httpClient->put("$version/order", [
+        $customer = $httpClient->put("$version/customer", [
             'json' => $data,
         ]);
 
-        return $order;
+        return $customer;
     }
 
     /**
-     * Retrieve an order.
+     * Retrieve an customer.
      *
      * @param $id
      * @return mixed
@@ -68,51 +61,28 @@ class Order extends Aldelo
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $order = $httpClient->get("$version/order/{$id}");
+        $customer = $httpClient->get("$version/customer/{$id}");
 
-        return $order;
+        return $customer;
     }
 
     /**
-     * Fetch all orders.
+     * Fetch all customers.
      *
      * @param array $query
-     * @param $requiredDate
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws Exceptions\AldeloException
      */
-    public static function fetch($requiredDate, array $query = [])
+    public static function fetch(array $query = [])
     {
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
 
-        $orders = $httpClient->get("$version/orderList/{$requiredDate}", [
+        $customers = $httpClient->get("$version/customer", [
             'query' => $query
         ]);
 
-        return $orders;
+        return $customers;
     }
-
-    /**
-     * Delete order.
-     *
-     * @param int $id
-     * @param string $reason
-     * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws Exceptions\AldeloException
-     */
-    public static function void(int $id, string $reason = '')
-    {
-        $httpClient = self::getHttpClient();
-        $version = self::VERSION;
-
-        $orders = $httpClient->delete("$version/order/{$id}", [
-            'reason' => $reason
-        ]);
-
-        return $orders;
-    }
-
 }

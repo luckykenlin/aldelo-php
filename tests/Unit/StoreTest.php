@@ -21,6 +21,8 @@ class StoreTest extends TestCase
      * Retrieve store.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function testRetrieveTest()
     {

@@ -14,6 +14,7 @@ class Employee extends Aldelo
      * @param array $data
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function create(array $data = [])
     {
@@ -33,6 +34,7 @@ class Employee extends Aldelo
      * @param array $data
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function update(array $data = [])
     {
@@ -52,6 +54,7 @@ class Employee extends Aldelo
      * @param $id
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function retrieve(int $id)
     {
@@ -69,6 +72,7 @@ class Employee extends Aldelo
      * @param array $query
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function fetch(array $query = [])
     {

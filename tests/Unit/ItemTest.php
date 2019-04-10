@@ -22,6 +22,7 @@ class ItemTest extends TestCase
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testFetchTest()
     {
@@ -36,6 +37,7 @@ class ItemTest extends TestCase
      * Retrieve item.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testRetrieveTest()
     {

@@ -13,6 +13,7 @@ class Store extends Aldelo
      *
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function retrieve()
     {

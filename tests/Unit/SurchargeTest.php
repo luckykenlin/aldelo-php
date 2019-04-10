@@ -22,6 +22,7 @@ class SurchargeTest extends TestCase
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testFetchTest()
     {
@@ -34,6 +35,7 @@ class SurchargeTest extends TestCase
      * Retrieve surcharge.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testRetrieveTest()
     {

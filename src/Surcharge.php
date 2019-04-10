@@ -14,6 +14,7 @@ class Surcharge extends Aldelo
      * @param $id
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function retrieve(int $id)
     {
@@ -30,6 +31,7 @@ class Surcharge extends Aldelo
      *
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws Exceptions\AldeloException
      */
     public static function fetch()
     {

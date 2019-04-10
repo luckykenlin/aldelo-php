@@ -22,6 +22,7 @@ class DiscountTest extends TestCase
      *
      * @return void
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testFetchTest()
     {
@@ -34,6 +35,7 @@ class DiscountTest extends TestCase
      * Retrieve discount.
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Luckykenlin\Aldelo\Exceptions\AldeloException
      */
     public function testRetrieveTest()
     {
