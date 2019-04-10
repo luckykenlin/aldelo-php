@@ -8,6 +8,13 @@ namespace Luckykenlin\Aldelo;
  */
 class Order extends Aldelo
 {
+    const DINE_IN = 1;
+    const BAR = 2;
+    const TAKE_OUT = 3;
+    const DRIVE_THRU = 4;
+    const DELIVERY = 5;
+    const RETAIL = 6;
+
     /**
      * Create an order.
      *
