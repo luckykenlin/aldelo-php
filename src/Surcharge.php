@@ -8,6 +8,9 @@ namespace Luckykenlin\Aldelo;
  */
 class Surcharge extends Aldelo
 {
+    const PERCENT = 1;
+    const FIXED_AMOUNT = 2;
+
     /**
      * Get active surcharge details by surcharge ID.
      *

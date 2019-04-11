@@ -8,6 +8,11 @@ namespace Luckykenlin\Aldelo;
  */
 class Discount extends Aldelo
 {
+    const TYPE_BOTH_ORDER = 1;
+    const PERCENT = 1;
+    const FIXED_AMOUNT = 2;
+    const ITEM_DISCOUNT = 3;
+
     /**
      * Get active discount details by discount ID.
      *
