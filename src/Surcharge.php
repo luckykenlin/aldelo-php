@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Surcharge extends Aldelo
 {
     /**
-     * Retrieve an surcharge.
+     * Get active surcharge details by surcharge ID.
      *
      * @param $id
      * @return mixed
@@ -27,7 +27,7 @@ class Surcharge extends Aldelo
     }
 
     /**
-     * Fetch all surcharges.
+     * Get an active list of surcharges.
      *
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException

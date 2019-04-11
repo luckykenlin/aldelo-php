@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Customer extends Aldelo
 {
     /**
-     * Create an customer.
+     * Add a new customer record.
      *
      * @param array $data
      * @return mixed
@@ -29,7 +29,7 @@ class Customer extends Aldelo
     }
 
     /**
-     * Update an customer info.
+     * Update an active customer with changes.
      *
      * @param array $data
      * @return mixed
@@ -49,7 +49,7 @@ class Customer extends Aldelo
     }
 
     /**
-     * Retrieve an customer.
+     * Search for an active customer by customer ID.
      *
      * @param $id
      * @return mixed
@@ -67,7 +67,7 @@ class Customer extends Aldelo
     }
 
     /**
-     * Fetch all customers.
+     * Search for a list of active customers by phone or email.
      *
      * @param array $query
      * @return mixed

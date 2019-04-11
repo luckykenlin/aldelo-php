@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Employee extends Aldelo
 {
     /**
-     * Create an employee.
+     * Add new employee into store. This api is used for employee.
      *
      * @param array $data
      * @return mixed
@@ -29,7 +29,7 @@ class Employee extends Aldelo
     }
 
     /**
-     * Update an employee info.
+     * Update an existing employee record.
      *
      * @param array $data
      * @return mixed
@@ -49,7 +49,7 @@ class Employee extends Aldelo
     }
 
     /**
-     * Retrieve an employee.
+     * Get active employee's information based on employee ID.
      *
      * @param $id
      * @return mixed
@@ -67,7 +67,7 @@ class Employee extends Aldelo
     }
 
     /**
-     * Fetch all employees.
+     * Get an active list of employees with basic information.
      *
      * @param array $query
      * @return mixed

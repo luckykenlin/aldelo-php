@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Store extends Aldelo
 {
     /**
-     * Retrieve an store.
+     * Get just the store's information rather than the whole setup data of the store.
      *
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException

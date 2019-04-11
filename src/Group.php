@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Group extends Aldelo
 {
     /**
-     * Retrieve an group.
+     * Get the active product group's information based on group ID.
      *
      * @param $id
      * @return mixed
@@ -27,7 +27,7 @@ class Group extends Aldelo
     }
 
     /**
-     * Fetch all groups.
+     * Get an active list of product groups from the connected store.
      *
      * @return mixed
      * @throws \GuzzleHttp\Exception\GuzzleException

@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Item extends Aldelo
 {
     /**
-     * Retrieve an Item.
+     * Get active product item details, including related modifiers, and tag alongs..
      *
      * @param $id
      * @return mixed
@@ -27,7 +27,7 @@ class Item extends Aldelo
     }
 
     /**
-     * Fetch all items.
+     * Get active product items under a given product group.
      *
      * @param int $groupId
      * @param array $query ex:['parentItemID' = 10000000000001]

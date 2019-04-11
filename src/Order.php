@@ -20,7 +20,7 @@ class Order extends Aldelo
     const STATUS_VOID = 3;
 
     /**
-     * Create an order.
+     * Add a new order to the store.
      *
      * @param array $data
      * @return mixed
@@ -40,7 +40,7 @@ class Order extends Aldelo
     }
 
     /**
-     * Update an order info.
+     * Update an existing open status order.
      *
      * @param array $data
      * @return mixed
@@ -60,7 +60,7 @@ class Order extends Aldelo
     }
 
     /**
-     * Retrieve an order.
+     * Get the order and details based on the given order ID.
      *
      * @param $id
      * @return mixed
@@ -78,7 +78,9 @@ class Order extends Aldelo
     }
 
     /**
-     * Fetch all orders.
+     * Get an list of orders based on the required date. Date format is yyyymmdd.
+     * Additional filter options provided via optional query parameters.
+     * Only current date and previous 2 days of data may be retrieved.
      *
      * @param array $query
      * @param $requiredDate
@@ -99,7 +101,7 @@ class Order extends Aldelo
     }
 
     /**
-     * Delete order.
+     * Void an existing open status order.
      *
      * @param int $id
      * @param string $reason

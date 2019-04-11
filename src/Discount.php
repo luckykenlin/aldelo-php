@@ -9,7 +9,7 @@ namespace Luckykenlin\Aldelo;
 class Discount extends Aldelo
 {
     /**
-     * Retrieve an discount.
+     * Get active discount details by discount ID.
      *
      * @param $id
      * @return mixed
@@ -27,7 +27,7 @@ class Discount extends Aldelo
     }
 
     /**
-     * Fetch all discounts.
+     * Get an active list of discounts.
      *
      * @return mixed
      * @throws Exceptions\AldeloException
