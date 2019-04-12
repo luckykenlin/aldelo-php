@@ -120,5 +120,4 @@ class Order extends Aldelo
 
         return $orders;
     }
-
 }

@@ -10,11 +10,11 @@ class DiscountTest extends TestCase
 {
     public function setUpEnv()
     {
-        Aldelo::setIsvId('D-190329-0002');
-        Aldelo::setIsvKey('1cf35aac-be87-455b-815a-d2e04963f66d');
-        Aldelo::setAppKey('90326b57-a7d2-41cb-ad2a-82f1243d1b24');
-        Aldelo::setAppVersion('0.0.0.0');
-        Aldelo::setStoreSubId('2437-F8BA');
+        Aldelo::setIsvId(env("ALDELO_ISV_ID", 'D-181207-0001'));
+        Aldelo::setIsvKey(env("ALDELO_ISV_KEY", '480a31cb-03e6-4718-9e16-2d7a27e7af8f'));
+        Aldelo::setAppKey(env("ALDELO_APP_KEY", '6eeeccfb-dd19-41a3-b2fa-a15586c23e64'));
+        Aldelo::setAppVersion(env("ALDELO_APP_VERSION", '1.0.0.0'));
+        Aldelo::setStoreSubId(env("ALDELO_STORE_SUB_ID", '2296-1C2A'));
     }
 
     /**
