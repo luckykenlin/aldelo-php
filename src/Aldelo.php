@@ -16,7 +16,7 @@ class Aldelo
     /**
      * Production api url.
      */
-    const PRODUCTION_URL = '';
+    const PRODUCTION_URL = 'https://go.aldelo.io/';
 
     /**
      * @var
