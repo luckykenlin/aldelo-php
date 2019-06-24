@@ -190,14 +190,19 @@ class HttpClient
      */
     public function handleResponse($response)
     {
-        $result = json_decode($response->getBody(), true);
-        if (array_key_exists('err_code', $result)) {
-            if ((int)$result['err_code'] === AldeloException::NOT_FOUND) {
-                return $result;
-            } else if ((int)$result['err_code'] !== AldeloException::SUCCESSFUL) {
-                throw new AldeloException($result['err_msg'], 422);
+        $result = $response->getBody()->getContents();
+        $jsonDecodeResult = json_decode($result, true);
+        if (json_last_error() == JSON_ERROR_NONE) {
+            if (array_key_exists('err_code', $jsonDecodeResult)) {
+                if ((int)$jsonDecodeResult['err_code'] === AldeloException::NOT_FOUND) {
+                    return $jsonDecodeResult;
+                } else if ((int)$jsonDecodeResult['err_code'] !== AldeloException::SUCCESSFUL) {
+                    throw new AldeloException($jsonDecodeResult['err_msg'], 422);
+                }
             }
+            $result = $jsonDecodeResult;
         }
+
         return $result;
     }
 }
