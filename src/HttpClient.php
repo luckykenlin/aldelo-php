@@ -193,12 +193,8 @@ class HttpClient
         $result = $response->getBody()->getContents();
         $jsonDecodeResult = json_decode($result, true);
         if (json_last_error() == JSON_ERROR_NONE) {
-            if (array_key_exists('err_code', $jsonDecodeResult)) {
-                if ((int)$jsonDecodeResult['err_code'] === AldeloException::NOT_FOUND) {
-                    return $jsonDecodeResult;
-                } else if ((int)$jsonDecodeResult['err_code'] !== AldeloException::SUCCESSFUL) {
-                    throw new AldeloException($jsonDecodeResult['err_msg'], 422);
-                }
+            if (array_key_exists('err_code', $jsonDecodeResult) && (int)$jsonDecodeResult['err_code'] !== AldeloException::NOT_FOUND) {
+                throw new AldeloException($jsonDecodeResult['err_msg'], 422);
             }
             $result = $jsonDecodeResult;
         }
