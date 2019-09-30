@@ -15,6 +15,7 @@ class EmployeeTest extends TestCase
         Aldelo::setAppKey(env("ALDELO_APP_KEY", '6eeeccfb-dd19-41a3-b2fa-a15586c23e64'));
         Aldelo::setAppVersion(env("ALDELO_APP_VERSION", '1.0.0.0'));
         Aldelo::setStoreSubId(env("ALDELO_STORE_SUB_ID", '2296-1C2A'));
+        Aldelo::setStoreSubId(env("ALDELO_STORE_APP_TOKEN", '72ce5c21-9885-4de8-9f07-7dcc3202e83a'));
     }
 
     /**

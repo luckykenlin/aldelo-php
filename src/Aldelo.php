@@ -54,6 +54,27 @@ class Aldelo
     private static $storeSubId;
 
     /**
+     * @var
+     */
+    private static $storeAppToken;
+
+    /**
+     * @return mixed
+     */
+    public static function getStoreAppToken()
+    {
+        return self::$storeAppToken;
+    }
+
+    /**
+     * @param mixed $storeAppToken
+     */
+    public static function setStoreAppToken($storeAppToken): void
+    {
+        self::$storeAppToken = $storeAppToken;
+    }
+
+    /**
      * @return mixed
      */
     public static function getStoreSubId()
@@ -147,6 +168,7 @@ class Aldelo
                 'App-Key' => static::getAppKey(),
                 'App-Version' => static::getAppVersion(),
                 'Store-Sub-ID' => static::getStoreSubId(),
+                'Store-App-Token' => static::getStoreAppToken(),
             ],
         ]);
 
