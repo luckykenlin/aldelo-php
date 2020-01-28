@@ -20,7 +20,6 @@
     "php": "^7.2",
     "ext-json": "*",
     "guzzlehttp/guzzle": "^6.3",
-    "laravel/framework": "^6.2",
     "laravel/helpers": "^1.1",
     "phpseclib/phpseclib": "^2.0"
   },
