@@ -105,19 +105,23 @@ class Order extends Aldelo
      *
      * @param int $id
      * @param string $reason
+     * @param string $doNotAutoPrint
+     * @param string $systemPrint
      * @return mixed
-     * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws Exceptions\AldeloException
+     * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public static function void(int $id, string $reason = '')
+    public static function void(int $id, string $reason = '', string $doNotAutoPrint = 'true', string $systemPrint = 'false')
     {
         $httpClient = self::getHttpClient();
         $version = self::VERSION;
-
-        $orders = $httpClient->delete("$version/order/{$id}", [
-            'reason' => $reason
+        $order = $httpClient->delete("$version/order/{$id}", [
+            'query' => [
+                'reason' => $reason,
+                'doNotAutoPrint' => $doNotAutoPrint,
+                'systemPrint' => $systemPrint
+            ]
         ]);
-
-        return $orders;
+        return $order;
     }
 }
